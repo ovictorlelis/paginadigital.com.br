@@ -1,0 +1,442 @@
+:root {
+  font-size: 62.5%;
+
+  --color-primary: #1e272e;
+  --color-secondary: #485460;
+  --color-feature: #ffde59;
+  --fc-primary: #f3f3f3;
+
+  --ff-primary: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  background-color: var(--color-primary);
+  color: var(--fc-primary);
+  font-family: var(--ff-primary);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--fc-primary);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  line-height: 2.4rem;
+}
+
+.none {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.content-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#loading,
+#error {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#page {
+  padding: 2rem;
+}
+
+header {
+  margin-top: 5rem;
+}
+
+header img {
+  height: 215px;
+  border-radius: 50%;
+  width: 21.5rem;
+  border: 1rem solid var(--color-secondary);
+}
+
+.social a {
+  width: 3rem;
+  height: 3rem;
+}
+
+.social a svg {
+  height: auto;
+}
+
+:is(#github, #linkedin, #instagram, #email) svg {
+  fill: #ffde59;
+}
+
+:is(#github, #linkedin, #email) svg path,
+:is(#linkedin, #instagram) svg rect,
+:is(#instagram, #email) svg circle,
+#linkedin svg line {
+  stroke: #ffde59;
+}
+
+#github:hover svg {
+  fill: #f0f6fc;
+}
+
+#github:hover svg path {
+  stroke: #f0f6fc;
+}
+
+#linkedin:hover svg {
+  fill: #0073b1;
+}
+#linkedin:hover svg path,
+#linkedin:hover svg rect,
+#linkedin:hover svg line {
+  stroke: #0073b1;
+}
+
+#instagram:hover svg {
+  fill: #d6249f;
+}
+
+#instagram:hover svg rect,
+#instagram:hover svg circle {
+  stroke: #d6249f;
+}
+
+#email:hover svg {
+  fill: #db4a39;
+}
+
+#email:hover svg path,
+#email:hover svg circle {
+  stroke: #db4a39;
+}
+
+main {
+  margin: 5rem 0;
+}
+
+nav {
+  margin-bottom: 5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background: var(--color-secondary);
+}
+
+nav button {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  padding: 1.3rem 2.3rem;
+  border-radius: 10px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  transition: all 500ms;
+  background: var(--color-feature);
+  color: var(--color-primary);
+}
+
+article {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+article:nth-child(2n) {
+  justify-content: flex-end;
+}
+
+#portfolio article img {
+  max-width: 45.5rem;
+  height: 35.5rem;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.75;
+  filter: blur(2px);
+}
+
+#portfolio article:hover > img {
+  filter: blur(0);
+  transition: all 500ms;
+}
+
+#portfolio article .content {
+  text-align: right;
+  position: absolute;
+  right: 0;
+}
+
+article .content > span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#portfolio article:nth-child(2n) .content {
+  text-align: left;
+  left: 0;
+}
+
+:is(#courses, #jobs) article:nth-child(2n) .content .codes {
+  display: flex;
+  justify-content: flex-end;
+}
+
+:is(#courses, #jobs) article:nth-child(2n) .content {
+  text-align: right;
+  left: 0;
+}
+
+#portfolio article:nth-child(2n) .content .codes {
+  flex-direction: row-reverse;
+}
+
+article .content h3 {
+  font-size: 2.5rem;
+}
+
+#portfolio article .content .codes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+#portfolio article .content .codes a {
+  display: flex;
+  align-items: center;
+}
+
+#portfolio article .content .codes svg {
+  max-width: 1.8rem;
+  height: auto;
+}
+
+article .content .info {
+  background-color: var(--color-secondary);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 45.5rem;
+  min-height: 12rem;
+  margin: 2rem 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  padding: 5rem;
+}
+
+footer p {
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.md a {
+  color: var(--color-feature);
+}
+
+.md :is(h1, h2, h3, h4, h5, h6) {
+  padding-bottom: 1rem;
+}
+
+.md :is(h1, h2) {
+  border-bottom: 1px solid var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.md :is(p, ul, pre) {
+  margin-bottom: 2rem;
+}
+
+.info .md :is(p:last-child, ul:last-child) {
+  margin-bottom: 0px;
+}
+
+.md table {
+  margin-bottom: 5rem;
+}
+
+.md td {
+  padding: 1rem 0;
+}
+
+.codes ul,
+.md ul {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  list-style: none;
+}
+
+.codes ul li:not(:last-child)::after,
+.md ul li:not(:last-child)::after {
+  content: "\2212";
+  color: var(--color-feature);
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.md ul li {
+  margin-bottom: 1rem;
+}
+
+.md p + h2,
+.md ul + h2 {
+  margin-top: 5rem;
+}
+
+.md table {
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  body {
+    width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    padding: 0;
+    position: relative;
+    text-align: center;
+  }
+
+  nav button {
+    display: block;
+    border: 0;
+    background: var(--color-secondary);
+    color: var(--fc-primary);
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.3rem 2.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--ff-primary);
+  }
+
+  nav button:hover {
+    transition: all 500ms;
+    background: var(--color-feature);
+    color: var(--color-primary);
+  }
+
+  nav ul {
+    top: 6rem;
+    left: 0;
+    position: absolute;
+    z-index: 99;
+    background: var(--color-secondary);
+    border-radius: 10px;
+    padding: 1rem;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex !important;
+  }
+
+  nav ul.gap-3 {
+    gap: 1rem;
+  }
+
+  nav ul > li {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  nav ul li a {
+    text-align: center;
+    display: block;
+  }
+
+  #portfolio article {
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10rem;
+  }
+
+  #portfolio article img {
+    margin-bottom: 2rem;
+    opacity: 0.3;
+    filter: blur(0);
+  }
+
+  #portfolio article .content {
+    position: absolute;
+    padding: 1.5rem;
+    bottom: -8rem;
+  }
+
+  article .content .info {
+    width: 100%;
+  }
+}
