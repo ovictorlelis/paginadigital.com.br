@@ -50,6 +50,10 @@ p {
   display: flex;
 }
 
+.column {
+  flex-direction: column;
+}
+
 .gap-1 {
   gap: 1rem;
 }
@@ -124,14 +128,14 @@ header img {
 }
 
 :is(#github, #linkedin, #instagram, #email) svg {
-  fill: #ffde59;
+  fill: var(--color-feature);
 }
 
 :is(#github, #linkedin, #email) svg path,
 :is(#linkedin, #instagram) svg rect,
 :is(#instagram, #email) svg circle,
 #linkedin svg line {
-  stroke: #ffde59;
+  stroke: var(--color-feature);
 }
 
 #github:hover svg {
