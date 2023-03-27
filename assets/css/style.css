@@ -109,9 +109,18 @@ header {
   margin-top: 5rem;
 }
 
+header .img {
+  height: 215px;
+  width: 21.5rem;
+  border-radius: 50%;
+  background-image: url("../../assets/images/logo.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: 65%;
+  border: 1rem solid var(--color-secondary);
+}
+
 header img {
-  height: 150px;
-  width: 150px;
 }
 
 .social a {
