@@ -54,10 +54,8 @@ function getContent() {
   let error = document.querySelector("#error");
   let page = document.querySelector("#page");
 
-  let aboutContent = document.querySelector("#about");
   let productsContent = document.querySelector("#products");
 
-  let about = [];
   let products = [];
 
   fetch("https://api.github.com/repos/ovictorlelis/paginadigital.com.br/issues")
@@ -67,9 +65,6 @@ function getContent() {
         if (items.user.login == "ovictorlelis") {
           if (items.labels[0]) {
             switch (items.labels[0].name) {
-              case "about":
-                about.push(items);
-                break;
               case "products":
                 products.push(items);
                 break;
@@ -79,9 +74,6 @@ function getContent() {
       });
 
       const converter = new showdown.Converter({ tables: true });
-      aboutContent.innerHTML = `<div class="md">
-        ${converter.makeHtml(about[0].body)}
-      </div>`;
 
       let regex = /!?\[([^\]]*)\]\(([^\)]+)\)/gm;
       products.forEach((data) => {
