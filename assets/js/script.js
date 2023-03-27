@@ -86,7 +86,7 @@ function getContent() {
       let regex = /!?\[([^\]]*)\]\(([^\)]+)\)/gm;
       products.forEach((data) => {
         let matches = data.body.match(regex);
-        let language = data.body.match(/###.+/g)[0].replace("###", "");
+        let url = data.body.match(/###.+/g)[0].replace("###", "");
         let content = data.body.replace(regex, "").split(/###.+/g)[1].trim();
         let datas = [];
         const singleMatch = /\[([^\[]+)\]\((.*)\)/;
@@ -95,8 +95,8 @@ function getContent() {
           datas[text[1]] = text[2];
         }
 
-        let languages = language.trim(" ", "").split(" | ");
-        language = "<ul><li>" + languages.join("</li><li>") + "</li></ul>";
+        let urls = url.trim(" ", "").split(" | ");
+        url = "<ul><li>" + urls.join("</li><li>") + "</li></ul>";
 
         productsContent.innerHTML += `
             <article>
@@ -107,37 +107,12 @@ function getContent() {
                     ${content}
                   </p>
                   <div class="codes">
-                    ${language}
                       <a
                         class="${datas["link"] ? "" : "none"}"
                         target="_blank"
                         href="${datas["link"]}"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="192"
-                          height="192"
-                          fill="var(--color-feature)"
-                          viewBox="0 0 256 256"
-                        >
-                          <rect width="256" height="256" fill="none"></rect>
-                          <path
-                            d="M122.3,71.4l19.8-19.8a44.1,44.1,0,0,1,62.3,62.3l-28.3,28.2a43.9,43.9,0,0,1-62.2,0"
-                            fill="none"
-                            stroke="var(--color-feature)"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="16"
-                          ></path>
-                          <path
-                            d="M133.7,184.6l-19.8,19.8a44.1,44.1,0,0,1-62.3-62.3l28.3-28.2a43.9,43.9,0,0,1,62.2,0"
-                            fill="none"
-                            stroke="var(--color-feature)"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="16"
-                          ></path>
-                        </svg>
+                      ${url}
                       </a>
                       <a
                         class="${datas["github"] ? "" : "none"}"
